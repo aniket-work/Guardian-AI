@@ -1,6 +1,13 @@
-__pycache__/
-*.pyc
-.env
+# Ignore virtual environment
 venv/
-.ipynb_checkpoints/
-*.log
+__pycache__/
+*.db
+
+# Ignore Meta Scripts (Per strict rule)
+meta_scripts/
+
+# Ignore dotenv
+.env
+
+# DO NOT ignore images
+# !images/
