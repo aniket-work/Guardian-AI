@@ -1,6 +1,6 @@
 # Guardian-AI: Multi-Layered Content Integrity Filters for Autonomous Publishing
 
-![Title](https://raw.githubusercontent.com/aniket-work/Guardian-AI/main/images/title_diagram.png)
+![Title](https://raw.githubusercontent.com/aniket-work/Guardian-AI/6dd5af71ecdfe053f9dbcc1cd29118c3ad9a5ec8/images/title_diagram.png)
 
 Guardian-AI is an experimental multi-layered defense system designed to safeguard autonomous publishing pipelines. It utilizes a specialized swarm of integrity agents ("Guardians") to audit AI-generated content for adversarial injections, misinformation, plagiarism, and ethical compliance before publication.
 
@@ -13,7 +13,7 @@ Guardian-AI is an experimental multi-layered defense system designed to safeguar
 
 ## System Architecture
 
-![Architecture](https://raw.githubusercontent.com/aniket-work/Guardian-AI/main/images/architecture_diagram.png)
+![Architecture](https://raw.githubusercontent.com/aniket-work/Guardian-AI/6dd5af71ecdfe053f9dbcc1cd29118c3ad9a5ec8/images/architecture_diagram.png)
 
 The Guardian-AI pipeline operates as a sequential filter swarm where each layer must approve the content before it moves to the next. A failure in any layer triggers an immediate halt and rejection report.
 
@@ -42,7 +42,7 @@ python main.py
 
 ## Technical Flow
 
-![Sequence](https://raw.githubusercontent.com/aniket-work/Guardian-AI/main/images/sequence_diagram.png)
+![Sequence](https://raw.githubusercontent.com/aniket-work/Guardian-AI/6dd5af71ecdfe053f9dbcc1cd29118c3ad9a5ec8/images/sequence_diagram.png)
 
 ### The Filtering Process:
 1. **The Entry Sentinel**: Scans for "jailbreak" patterns and instruction-bypass attempts.
