@@ -1,53 +1,66 @@
-# DataPipeline-Sentinel: Persistent Memory OS for Data Pipelines
+# Guardian-AI: Multi-Layered Content Integrity Filters for Autonomous Publishing
 
-![Title](https://raw.githubusercontent.com/aniket-work/DataPipeline-Sentinel/main/images/title-animation.gif)
+![Title](https://raw.githubusercontent.com/aniket-work/Guardian-AI/main/images/title_diagram.png)
 
-**DataPipeline-Sentinel** is an experimental open-source PoC demonstrating how to build an "EverMem-style" persistent AI Agent OS. It is specifically designed for Data Engineers to autonomously manage, diagnose, and resolve recurring ETL and data pipeline incidents using Hierarchical Memory.
+Guardian-AI is an experimental multi-layered defense system designed to safeguard autonomous publishing pipelines. It utilizes a specialized swarm of integrity agents ("Guardians") to audit AI-generated content for adversarial injections, misinformation, plagiarism, and ethical compliance before publication.
 
-## The Architecture
-The agent uses a 4-tier memory architecture to mimic human reasoning and corporate knowledge retention:
+## Core Features
 
-1. **Short-Term Context Buffer (RAM):** Holds immediate workflow variables for active incidents.
-2. **Semantic Memory (FAISS):** Stores unstructured past error logs and anomalies as high-dimensional vectors. Allows the agent to instantly retrieve identical or similar historical incidents via cosine similarity.
-3. **Episodic Memory (SQLite):** An immutable, chronological audit trail of all agent actions, errors encountered, and ultimate resolutions applied by human engineers.
-4. **Declarative Memory (SQLite):** Firm rules, facts, and constraints (e.g., "Always use `infer_schema=True` for MongoDB drift") extracted overnight by a background memory consolidation process.
+- **Injection Sentinel**: Detects adaptive paraphrased and adversarial prompt injection attacks with pattern-based and heuristic analysis.
+- **Fact-Check Filter**: Cross-references claims against trusted knowledge bases and verified sources (simulated using verified sources list).
+- **Plagiarism Auditor**: Ensures content originality and originality through similarity indexing.
+- **Ethics & Tone Auditor**: Validates content against safety guidelines, toxic language policies, and brand alignment.
 
-![Architecture Diagram](https://raw.githubusercontent.com/aniket-work/DataPipeline-Sentinel/main/images/architecture_diagram.png)
+## System Architecture
 
-## Key Features
-- **Automated Memory Consolidation**: A background process that scans recent unstructured episodes (resolutions) and distills them into hard-coded constraints (Declarative logic).
-- **Semantic Retrieval**: Uses FAISS indexing to immediately recognize if an obscure pipeline error has been encountered and resolved months prior.
-- **Human-in-the-Loop Feedback**: Learns exclusively from what engineers actually do to resolve an incident.
+![Architecture](https://raw.githubusercontent.com/aniket-work/Guardian-AI/main/images/architecture_diagram.png)
 
-## Project Structure
-```text
-DataPipeline-Sentinel/
-├── main.py              # The simulation lifecycle runner
-├── memory_os.py         # FAISS + SQLite Hierarchical Memory implementation
-├── sentinel_agent.py    # The Agent logic retrieving and applying memory
-├── consolidation.py     # Background distillation job
-├── .env                 # API Keys
-├── images/              # Generated architecture diagrams and animated GIFs
-└── meta_scripts/        # Throwaway scripts used to build assets (Not Pushed)
+The Guardian-AI pipeline operates as a sequential filter swarm where each layer must approve the content before it moves to the next. A failure in any layer triggers an immediate halt and rejection report.
+
+## Quick Start
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/aniket-work/Guardian-AI.git
+cd Guardian-AI
+
+# Setup virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies (if any)
+pip install -r requirements.txt
 ```
 
-## How to Run
+### Running the Audit
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/aniket-work/DataPipeline-Sentinel.git
-   cd DataPipeline-Sentinel
-   ```
-2. **Setup virtual environment:**
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
-3. **Run the simulation:**
-   ```bash
-   python3 main.py
-   ```
+```bash
+python main.py
+```
 
-## Disclaimer
-*The views and opinions expressed here are solely my own and do not represent the views, positions, or opinions of my employer or any organization I am affiliated with. The content is based on my personal experience and experimentation and may be incomplete or incorrect. Any errors or misinterpretations are unintentional.*
+## Technical Flow
+
+![Sequence](https://raw.githubusercontent.com/aniket-work/Guardian-AI/main/images/sequence_diagram.png)
+
+### The Filtering Process:
+1. **The Entry Sentinel**: Scans for "jailbreak" patterns and instruction-bypass attempts.
+2. **The Integrity Audit**: Validates factual claims and source attribution.
+3. **The Originality Check**: Compares content against a historical database for similarity.
+4. **The Behavioral Layer**: Evaluates the tone and safety of the final output.
+
+## Project Structure
+
+```bash
+Guardian-AI/
+├── main.py          # Entry point and simulation runner
+├── engine.py        # Orchestration logic for the filter swarm
+├── filters.py       # Implementation of individual integrity layers
+├── images/          # Technical diagrams and visual assets
+└── README.md        # Professional documentation
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
